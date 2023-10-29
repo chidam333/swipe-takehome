@@ -62,7 +62,7 @@ As mentioned above, this application handles two cases for handling errors:
 
 
 ### Live Demo
-https://invoice-generator-react.netlify.app/
+https://swipe-takehome.chidam.xyz/
 
 ### Meta
 

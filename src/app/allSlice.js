@@ -6,7 +6,7 @@ export const allSlice = createSlice({
     reducers:{
         push: (state,newState)=>{
             state[newState.payload.invoiceNumber] = newState.payload
-            console.log(current(state))
+            // console.log(current(state))
         },
         del: (state,invoiceNumberWrapper)=>{
             let temp = {...state}
@@ -15,7 +15,7 @@ export const allSlice = createSlice({
         },
         modalSwitch:(state,invoiceNumberWrapper)=>{
             state[invoiceNumberWrapper.payload.no].isOpen = invoiceNumberWrapper.payload.action
-            console.log(current(state)) 
+            // console.log(current(state)) 
         }
     }
 })

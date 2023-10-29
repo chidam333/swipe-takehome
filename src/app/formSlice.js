@@ -6,7 +6,7 @@ export const formSlice = createSlice({
     reducers:{
         navigate: (state)=>{
             state[0] = !state[0]
-            console.log(current(state))
+            // console.log(current(state))
         }
     }
 })
