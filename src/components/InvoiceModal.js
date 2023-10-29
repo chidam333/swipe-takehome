@@ -30,6 +30,7 @@ function GenerateInvoice() {
   });
 }
 export default function InvoiceModal({showModal,closeModal,info,items,currency,subTotal,taxAmmount,total,discountAmmount}){
+      console.log({showModal})
       let initialState = {
         isOpen: false,
         currency: '$',
@@ -59,7 +60,8 @@ export default function InvoiceModal({showModal,closeModal,info,items,currency,s
         alert(`change invoice no!! invoice #:${state.invoiceNumber} already exists`)
         return
       }
-      dispatch(push(state))
+      closeModal()
+      dispatch(push({state}))
       dispatch(change(initialState))
       dispatch(navigate())
     }

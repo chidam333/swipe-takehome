@@ -5,8 +5,10 @@ export const allSlice = createSlice({
     initialState:{},
     reducers:{
         push: (state,newState)=>{
-            state[newState.payload.invoiceNumber] = newState.payload
-            // console.log(current(state))
+            state[newState.payload.state.invoiceNumber] = newState.payload.state
+            let temp = {...newState.payload.state}
+            temp["isOpen"] = false
+            state[newState.payload.state.invoiceNumber] = temp
         },
         del: (state,invoiceNumberWrapper)=>{
             let temp = {...state}

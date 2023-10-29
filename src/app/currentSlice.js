@@ -25,10 +25,12 @@ export const currentSlice = createSlice({
     },
     reducers:{
         change: (state,newState)=>{
+            console.log(newState.payload,"lol")
             for(let key in newState.payload){
                 state[key] = newState.payload[key]
             }
-            // console.log({state:current(state)})
+            console.log({state:current(state)})
+            return state
         }
     }
 })
