@@ -32,7 +32,7 @@ export default function ViewAll(){
                 <li class="list-group-item position-relative border-2 border-dark mb-2" key={states[i].invoiceNumber}>
                     <InvoiceModal showModal={states[i].isOpen} closeModal={closeModal} info={states[i]} items={states[i].items} currency={states[i].currency} subTotal={states[i].subTotal} taxAmmount={states[i].taxAmmount} discountAmmount={states[i].discountAmmount} total={states[i].total} onClick={modalInvoiceNo=states[i].invoiceNumber}/>
                     <div className="item fw-bold text-secondary mb-1">{`invoiceNo.#: ${states[i].invoiceNumber}`}</div>
-                    <div class="d-flex position-absolute " style={{top:'10%',right:'10%'}}>
+                    <div class="d-flex position-absolute " style={{top:'10%',right:'0%'}}>
                         <button class="btn btn-outline-danger py-1 mx-2" onClick={()=>{dispatch(del(states[i].invoiceNumber))}}>X</button>
                         <button class="btn btn-outline-primary py-1 mx-2" onClick={()=>{copyCur(states[i])}}><AiFillCopy/></button>
                         <button class="btn btn-outline-success py-1 mx-2" onClick={()=>{dispatch(del(states[i].invoiceNumber));copyCur(states[i])}}><AiFillEdit/></button>
