@@ -228,7 +228,7 @@ export default function InvoiceForm(){
         </Col>
         <Col md={4} lg={3}>
           <div className="sticky-top pt-md-3 pt-xl-4">
-            <button variant="primary" type="button" className="d-block btn-outline-primary w-100 mb-2 btn" onClick={()=>diffpage()}>View all Invoice</button>
+            <button variant="primary" type="button" className="d-block btn-outline-primary w-100 mb-2 btn" onClick={()=>{alert("you can continue editing");diffpage()}}>View all Invoice</button>
             <Button variant="primary" type="submit" className="d-block w-100">Review Invoice</Button>
             <InvoiceModal showModal={state.isOpen} closeModal={closeModal} info={state} items={state.items} currency={state.currency} subTotal={state.subTotal} taxAmmount={state.taxAmmount} discountAmmount={state.discountAmmount} total={state.total}/>
             <hr className="mt-4 mb-3"/>
