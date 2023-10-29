@@ -64,6 +64,11 @@ As mentioned above, this application handles two cases for handling errors:
 ### Live Demo
 https://swipe-takehome.chidam.xyz/
 
+### Screenshots
+
+![img2](https://i.ibb.co/N2Y5WTx/swipe1.png)
+![img1](https://i.ibb.co/rsg5knZ/swipe2.png)
+
 ### Meta
 
 chidam - [chidam.xyz](https://chidam.xyz)
