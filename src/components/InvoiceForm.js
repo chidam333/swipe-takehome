@@ -63,8 +63,6 @@ export default function InvoiceForm(){
     let items = [...state.items]
     items.push(item)
     let i = dispatch(change({items,sync:true}))
-    console.log({i})
-    console.log(state.items)
     handleCalculateTotal()
   }
   let handleCalculateTotal = ()=>{

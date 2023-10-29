@@ -16,16 +16,15 @@ export default function ViewAll(){
         dispatch(navigate())
     }
     let closeModal = () =>{
-        console.log("close")
+        // console.log("close")
         dispatch(modalSwitch({no:modalInvoiceNo,action:false}));
     }
     let openModal = () =>{
-        console.log("open")
+        // console.log("open")
         dispatch(modalSwitch({no:modalInvoiceNo,action:true}))
     }
     useEffect(()=>{
         let arr = []
-        console.log({states})
         for(let i in states){
             // console.log({i},states[i].billTo)
             arr.push(
