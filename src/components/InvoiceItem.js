@@ -7,12 +7,13 @@ import EditableField from './EditableField';
 
 class InvoiceItem extends React.Component {
   render() {
-    var onItemizedItemEdit = this.props.onItemizedItemEdit;
-    var currency = this.props.currency;
-    var rowDel = this.props.onRowDel;
-    var itemTable = this.props.items.map(function(item) {
+    let onItemizedItemEdit = this.props.onItemizedItemEdit;
+    let currency = this.props.currency;
+    let rowDel = this.props.onRowDel;
+    let onRowAdd = this.props.onRowAdd;
+    let itemTable = this.props.items.map(function(item) {
       return (
-        <ItemRow onItemizedItemEdit={onItemizedItemEdit} item={item} onDelEvent={rowDel.bind(this)} key={item.id} currency={currency}/>
+        <ItemRow onItemizedItemEdit={onItemizedItemEdit} item={item} onDelEvent={rowDel} key={item.id} currency={currency}/>
       )
     });
     return (
@@ -30,7 +31,7 @@ class InvoiceItem extends React.Component {
             {itemTable}
           </tbody>
         </Table>
-        <Button className="fw-bold" onClick={this.props.onRowAdd}>Add Item</Button>
+        <Button className="fw-bold" onClick={(e)=>{onRowAdd(e)}}>Add Item</Button>
       </div>
     );
 
@@ -46,16 +47,16 @@ class ItemRow extends React.Component {
       <tr>
         <td style={{width: '100%'}}>
           <EditableField
-            onItemizedItemEdit={this.props.onItemizedItemEdit}
+            onItemizedItemEdit={(e)=>{this.props.onItemizedItemEdit(e)}}
             cellData={{
             type: "text",
             name: "name",
-            placeholder: "Item name",
+            placeholder: `Item name ${this.props.item.id}`,
             value: this.props.item.name,
             id: this.props.item.id,
           }}/>
           <EditableField
-            onItemizedItemEdit={this.props.onItemizedItemEdit}
+            onItemizedItemEdit={(e)=>{this.props.onItemizedItemEdit(e)}}
             cellData={{
             type: "text",
             name: "description",
@@ -66,8 +67,8 @@ class ItemRow extends React.Component {
         </td>
         <td style={{minWidth: '70px'}}>
           <EditableField
-          onItemizedItemEdit={this.props.onItemizedItemEdit}
-          cellData={{
+            onItemizedItemEdit={(e)=>{this.props.onItemizedItemEdit(e)}}
+            cellData={{
             type: "number",
             name: "quantity",
             min: 1,
